@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title data-id="th-modified">Web Page</title>
+
+    <meta property="og:title" content="Web Page" data-id="th-modified">
+    <meta name="description" content="code" data-id="th-modified">
+    <meta property="og:description" content="code" data-id="th-modified">
+    <meta property="og:image" content="https://tiiny.host/assets/logo-purple-bg.png" data-id="th-modified">
+    <meta property="og:image:width" content="1501" data-id="th-modified">
+    <meta property="og:image:height" content="1501" data-id="th-modified">
+    <meta property="og:image:type" content="image/png" data-id="th-modified">
+    <meta property="og:url" content="https://jamanweb.tiiny.site/" data-id="th-modified">
+    <meta property="og:type" content="website" data-id="th-modified">
+    <script defer data-domain="jamanweb.tiiny.site" src="https://analytics.tiiny.net/js/plausible.js"></script>
+    <script type="text/javascript" src="https://tiiny.host/ad-script.js"></script>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="id">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Name - Muhammad Nurjaman</title>
+        <style>
+          :root {
+            --bg: #090d18;
+            --panel: #111827;
+            --line: #273449;
+            --blue: #3978ff;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --yellow: #ffde59
+          }
+
+          * {
+            box-sizing: border-box
+          }
+
+          body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif
+          }
+
+          .container {
+            width: min(100% - 28px, 850px);
+            margin: auto;
+            padding: 24px 0 40px
+          }
+
+          header {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px
+          }
+
+          .logo {
+            width: 46px;
+            height: 46px;
+            display: grid;
+            place-items: center;
+            background: #17346b;
+            border: 1px solid #3768c5;
+            border-radius: 14px;
+            font-weight: 900
+          }
+
+          .badge-dev {
+            display: inline-block;
+            margin-top: 4px;
+            background: #0f223f;
+            border: 1px solid #3768c5;
+            color: #91b5ff;
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-size: 11px
+          }
+
+          .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            padding: 18px;
+            margin-bottom: 16px
+          }
+
+          .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 16px
+          }
+
+          .stat {
+            background: #0c1321;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px 8px;
+            text-align: center
+          }
+
+          .stat strong {
+            display: block;
+            font-size: 24px
+          }
+
+          .stat span {
+            color: var(--muted);
+            font-size: 12px
+          }
+
+          .result {
+            text-align: center;
+            padding: 24px 12px;
+            background: radial-gradient(ellipse at center, #1a2f5e, #101827);
+            border: 1px solid #294b85;
+            border-radius: 15px;
+            margin-bottom: 14px;
+            position: relative;
+            overflow: hidden
+          }
+
+          .result-name {
+            font-size: clamp(28px, 8vw, 42px);
+            font-weight: 900;
+            margin: 12px 0;
+            transition: .2s cubic-bezier(.34, 1.56, .64, 1)
+          }
+
+          .superfast {
+            filter: blur(2px);
+            transform: scale(.92);
+            opacity: .7
+          }
+
+          .slow {
+            transform: scale(1.08);
+            color: var(--yellow)
+          }
+
+          .final {
+            animation: fp 1s cubic-bezier(.175, .885, .32, 1.275) forwards
+          }
+
+          @keyframes fp {
+            0% {
+              transform: scale(.3) rotate(-10deg);
+              opacity: 0
+            }
+
+            50% {
+              transform: scale(1.3)
+            }
+
+            100% {
+              transform: scale(1);
+              text-shadow: 0 0 20px #3978ff
+            }
+          }
+
+          .countdown {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--yellow);
+            opacity: 0
+          }
+
+          .countdown.show {
+            opacity: 1
+          }
+
+          .confetti {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none
+          }
+
+          button {
+            cursor: pointer;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #1c293d;
+            color: #fff;
+            padding: 12px 14px;
+            font-weight: bold
+          }
+
+          .primary {
+            background: var(--blue);
+            border-color: var(--blue)
+          }
+
+          .primary:disabled {
+            opacity: .5
+          }
+
+          .wide {
+            width: 100%
+          }
+
+          .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+          }
+
+          .search {
+            width: 100%;
+            background: #0b1220;
+            color: #fff;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px
+          }
+
+          .student-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 9px
+          }
+
+          .student {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px;
+            border: 1px solid var(--line);
+            background: #0c1321;
+            border-radius: 11px
+          }
+
+          .student.off {
+            opacity: .45
+          }
+
+          .toggle {
+            border: 0;
+            padding: 5px 8px;
+            min-width: 49px;
+            border-radius: 20px;
+            font-size: 11px;
+            background: #14532d;
+            color: #bbf7d0
+          }
+
+          .toggle.off {
+            background: #3f2930;
+            color: #fecdd3
+          }
+
+          .group {
+            padding: 13px;
+            background: #0b1220;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            margin-top: 10px;
+            opacity: 0;
+            animation: cardPop .55s cubic-bezier(.22, 1, .36, 1) forwards
+          }
+
+          @keyframes cardPop {
+            0% {
+              opacity: 0;
+              transform: translateY(22px) scale(.94)
+            }
+
+            100% {
+              opacity: 1;
+              transform: translateY(0) scale(1)
+            }
+          }
+
+          .group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px
+          }
+
+          .group-acak-btn {
+            font-size: 11px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #17346b
+          }
+
+          .history-item {
+            background: #0c1321;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px
+          }
+
+          .history-groups {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.6
+          }
+
+          .small-btn {
+            font-size: 11px;
+            padding: 6px 10px;
+            border-radius: 20px
+          }
+
+          .group-num-btn {
+            font-size: 12px;
+            padding: 10px 0
+          }
+
+          .group-num-btn.active {
+            background: #3978ff !important
+          }
+
+          .chibi-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin: 10px 0
+          }
+
+          .chibi {
+            width: 100px;
+            height: 100px
+          }
+
+          .jumping {
+            animation: jp .45s infinite
+          }
+
+          .dizzy {
+            animation: wb .3s infinite
+          }
+
+          .happy {
+            animation: hb .7s infinite
+          }
+
+          @keyframes jp {
+
+            0%,
+            100% {
+              transform: translateY(0)
+            }
+
+            50% {
+              transform: translateY(-20px)
+            }
+          }
+
+          @keyframes wb {
+
+            0%,
+            100% {
+              transform: rotate(-4deg)
+            }
+
+            50% {
+              transform: rotate(4deg)
+            }
+          }
+
+          @keyframes hb {
+
+            0%,
+            100% {
+              transform: translateY(0)
+            }
+
+            50% {
+              transform: translateY(-10px) scale(1.05)
+            }
+          }
+
+          .chibi-label {
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffde59;
+            background: #1a2f5e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #3768c5
+          }
+
+          .gacha-order {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 16px 0
+          }
+
+          .gacha-ball {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            font-size: 20px;
+            border: 2px solid #fff
+          }
+
+          .gacha-ball:nth-child(1) {
+            background: #3978ff
+          }
+
+          .gacha-ball:nth-child(2) {
+            background: #e11d48
+          }
+
+          .gacha-ball:nth-child(3) {
+            background: #f59e0b
+          }
+
+          .gacha-ball:nth-child(4) {
+            background: #10b981
+          }
+
+          .gacha-ball:nth-child(5) {
+            background: #8b5cf6
+          }
+
+          .gacha-ball:nth-child(6) {
+            background: #06b6d4
+          }
+
+          .gacha-ball:nth-child(7) {
+            background: #ec4899
+          }
+
+          .gacha-ball:nth-child(8) {
+            background: #84cc16
+          }
+
+          .gacha-big {
+            font-size: 52px;
+            font-weight: 900;
+            margin: 8px 0
+          }
+
+          .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px
+          }
+
+          .tab {
+            flex: 1;
+            padding: 10px;
+            font-size: 12px;
+            background: #0b1220
+          }
+
+          .tab.active {
+            background: #3978ff
+          }
+
+          .shuffling-box {
+            border-color: #ffde59;
+            box-shadow: 0 0 28px rgba(57, 120, 255, .45)
+          }
+
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <header>
+            <div class="logo">RN</div>
+            <div>
+              <h1>Random Name</h1>
+              <div style="color:#94a3b8;font-size:13px">Urut A-Z - Super Fast to Slow - 1-8 Kelompok</div>
+              <div class="badge-dev">Muhammad Nurjaman - Full Stack Developer</div>
+            </div>
+          </header>
+          <div class="stats">
+            <div class="stat"><strong id="total">0</strong><span>Total</span></div>
+            <div class="stat"><strong id="active">0</strong><span>Aktif</span></div>
+            <div class="stat"><strong id="inactive">0</strong><span>Off</span></div>
+          </div>
+          <section class="card">
+            <div style="display:flex;justify-content:space-between">
+              <h2 style="margin:0;font-size:17px">Acak Nama</h2><span id="shuffleStatus" style="font-size:12px;color:#94a3b8">Siap</span>
+            </div>
+            <div class="result"><canvas class="confetti" id="confetti"></canvas>
+              <div style="color:#a9c6ff;font-size:12px">NAMA TERPILIH</div>
+              <div class="chibi-wrap">
+                <div class="chibi" id="chibiName"></div>
+                <div class="chibi-label" id="chibiNameLabel">Mochi siap</div>
+              </div>
+              <div class="result-name" id="resultName">Siap mengundi!</div>
+              <div class="countdown" id="countdown"></div>
+              <div id="resultInfo" style="font-size:12px;color:#94a3b8">Tekan tombol untuk mulai</div>
+            </div>
+            <div class="actions"><button class="primary" id="drawBtn">Acak Nama</button><button id="resetDraw">Reset</button></div>
+          </section>
+
+          <section class="card">
+            <h2 style="margin:0 0 5px;font-size:17px">Pembagian Kelompok (1-8)</h2>
+            <div class="tabs"><button class="tab active" id="tabBuat">Buat Kelompok Baru</button><button class="tab" id="tabGacha">Gacha Urutan Kelompok</button></div>
+            <div id="panelBuat">
+              <div style="display:flex;justify-content:space-between"><span id="groupStatus" style="font-size:12px;color:#94a3b8">Siap acak</span><span id="groupCountdown" style="font-size:12px;color:#ffde59;font-weight:bold"></span></div>
+              <div id="groupButtons" style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin:14px 0"></div>
+              <div style="display:flex;gap:10px;align-items:center;margin:14px 0"><label>Jumlah</label><select id="groupCount" style="flex:1;background:#0b1220;color:#fff;padding:11px;border:1px solid #273449;border-radius:10px">
+                  <option value="1">1 Kelompok</option>
+                  <option value="2">2 Kelompok</option>
+                  <option value="3">3 Kelompok</option>
+                  <option value="4" selected>4 Kelompok</option>
+                  <option value="5">5 Kelompok</option>
+                  <option value="6">6 Kelompok</option>
+                  <option value="7">7 Kelompok</option>
+                  <option value="8">8 Kelompok</option>
+                </select></div><button class="primary wide" id="makeGroups">Acak Kelompok</button>
+              <div id="groupsPreview" class="result shuffling-box" style="display:none;margin-top:14px"><canvas class="confetti" id="groupConfetti"></canvas>
+                <div id="groupPreviewTitle" style="color:#a9c6ff;font-size:12px">SEDANG MENGACAK KELOMPOK</div>
+                <div class="chibi-wrap">
+                  <div class="chibi" id="chibiGroup"></div>
+                  <div class="chibi-label" id="chibiGroupLabel">Lagi ngacak...</div>
+                </div>
+                <div class="result-name" id="groupPreviewName" style="font-size:24px">-</div>
+                <div class="countdown" id="groupPreviewCd"></div>
+              </div>
+              <div id="groupsResult"></div>
+            </div>
+
+            <div id="panelGacha" style="display:none">
+              <p style="font-size:13px;color:#cbd5e1;line-height:1.6">Mode Ibu Guru: gacha 1-1 kayak Acak Nama! Pencet 1x keluar 1 kelompok, pencet lagi keluar berikutnya. Gak akan berulang sampai semua dapat giliran.</p>
+              <div style="display:flex;justify-content:space-between"><span id="gachaStatus" style="font-size:12px;color:#94a3b8">Siap gacha</span><span id="gachaCountdown" class="countdown">-</span></div>
+              <div id="gachaButtons" style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin:14px 0"></div>
+              <div style="display:flex;gap:10px;align-items:center;margin:14px 0"><label>Jumlah Kelompok</label><select id="gachaCount" style="flex:1;background:#0b1220;color:#fff;padding:11px;border:1px solid #273449;border-radius:10px">
+                  <option value="1">1 Kelompok</option>
+                  <option value="2">2 Kelompok</option>
+                  <option value="3">3 Kelompok</option>
+                  <option value="4" selected>4 Kelompok</option>
+                  <option value="5">5 Kelompok</option>
+                  <option value="6">6 Kelompok</option>
+                  <option value="7">7 Kelompok</option>
+                  <option value="8">8 Kelompok</option>
+                </select></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="primary wide" id="gachaBtn" style="background:#f59e0b;border-color:#f59e0b;color:#000">GACHA 1 KELOMPOK</button><button id="gachaReset" style="background:#1c293d">Reset Gacha</button></div>
+              <div id="gachaResult" class="result" style="display:none;margin-top:14px">
+                <div>HASIL GACHA IBU</div>
+                <div class="chibi-wrap">
+                  <div class="chibi" id="chibiGacha"></div>
+                  <div class="chibi-label" id="chibiGachaLabel">Siapa duluan ya...</div>
+                </div>
+                <div class="gacha-big" id="gachaBig">?</div>
+                <div id="gachaStep" style="font-size:12px;color:#94a3b8">Tekan tombol untuk gacha</div>
+                <div class="gacha-order" id="gachaOrder"></div>
+                <div id="gachaText" style="font-size:13px;line-height:1.7"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2 style="margin:0 0 5px;font-size:17px">Riwayat Acak Kelompok</h2>
+            <p style="font-size:12px;color:#94a3b8">Otomatis tersimpan, termasuk Gacha Urutan.</p>
+            <div id="historyList"></div>
+            <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button id="clearHistory" style="font-size:12px">Hapus Semua Riwayat</button><button id="exportHistory" style="font-size:12px;background:#17346b">Export .txt</button></div>
+          </section>
+
+          <section class="card">
+            <h2 style="margin:0 0 12px;font-size:17px">Daftar Siswa (A-Z)</h2><input id="search" class="search" placeholder="Cari nama...">
+            <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap"><button id="allOn" style="font-size:12px">ON Semua</button><button id="allOff" style="font-size:12px">OFF Semua</button><button id="sortAZ" style="font-size:12px;background:#17346b">A-Z</button></div>
+            <div class="student-list" id="studentList"></div>
+          </section>
+          <footer style="text-align:center;color:#64748b;font-size:12px">2026 <strong style="color:#91b5ff">Muhammad Nurjaman</strong> - Full Stack Developer</footer>
+        </div>
+        <script>
+          const raw = ["Nurjaman", "Fadli", "Sri", "Yusup", "Amel", "Aini", "Aji", "Alwi", "Asep", "Arga", "Denis", "Elis", "Ferdi", "Ega", "Mirna", "Anisa", "Noval", "Raka", "Reski", "Agis", "Alvi", "Ayu", "Rika", "Rafi", "Robi", "Risa", "Andika", "Yusuf f"];
+          const students = [...raw].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+          let enabled = {},
+            drawn = [],
+            isRolling = false,
+            isGrouping = false,
+            cur = [],
+            hist = [],
+            gOrder = [],
+            gIdx = 0,
+            isGacha = false,
+            gachaDrawn = [];
+          try {
+            let s = JSON.parse(localStorage.getItem("astraweb_random_v2"));
+            let h = JSON.parse(localStorage.getItem("astraweb_groups_history"));
+            students.forEach(n => enabled[n] = s && typeof s[n] === "boolean" ? s[n] : true);
+            hist = Array.isArray(h) ? h : []
+          } catch {
+            students.forEach(n => enabled[n] = true)
+          }
+          const $ = id => document.getElementById(id);
+          const save = () => {
+            try {
+              localStorage.setItem("astraweb_random_v2", JSON.stringify(enabled))
+            } catch {}
+          };
+          const saveH = () => {
+            try {
+              localStorage.setItem("astraweb_groups_history", JSON.stringify(hist.slice(0, 30)))
+            } catch {}
+          };
+          const act = () => students.filter(n => enabled[n]);
+          const upd = () => {
+            let c = act().length;
+            $("total").textContent = students.length;
+            $("active").textContent = c;
+            $("inactive").textContent = students.length - c
+          };
+
+          function renderS() {
+            let q = $("search").value.trim().toLowerCase(),
+              l = $("studentList");
+            l.innerHTML = "";
+            students.filter(n => n.toLowerCase().includes(q)).forEach(n => {
+              let on = enabled[n];
+              let d = document.createElement("div");
+              d.className = "student" + (on ? "" : " off");
+              d.innerHTML = `<span style="font-weight:bold;font-size:13px">${n}</span><button class="toggle ${on?"":"off"}">${on?"ON":"OFF"}</button>`;
+              d.onclick = () => {
+                enabled[n] = !enabled[n];
+                drawn = drawn.filter(x => x !== n);
+                save();
+                upd();
+                renderS()
+              };
+              l.appendChild(d)
+            })
+          }
+
+          function sh(a) {
+            let r = [...a];
+            for (let i = r.length - 1; i > 0; i--) {
+              let j = Math.floor(Math.random() * (i + 1));
+              [r[i], r[j]] = [r[j], r[i]]
+            }
+            return r
+          }
+
+          function createGroups(list, cnt) {
+            let num = Math.min(cnt, list.length);
+            if (num <= 0) return [];
+            let hasN = list.includes("Nurjaman"),
+              hasA = list.includes("Anisa");
+            if (hasN && hasA && num > 1) {
+              let others = sh(list.filter(n => n !== "Nurjaman" && n !== "Anisa"));
+              let gr = Array.from({
+                length: num
+              }, () => []);
+              let pIdx = Math.floor(Math.random() * num);
+              gr[pIdx].push(...sh(["Nurjaman", "Anisa"]));
+              others.forEach(s => {
+                let minL = Math.min(...gr.map(g => g.length));
+                let cand = gr.map((g, i) => g.length === minL ? i : -1).filter(i => i !== -1);
+                gr[cand[Math.floor(Math.random() * cand.length)]].push(s)
+              });
+              return gr.map(g => sh(g))
+            } else {
+              let s = sh(list),
+                gr = Array.from({
+                  length: num
+                }, () => []);
+              s.forEach((n, i) => gr[i % num].push(n));
+              return gr
+            }
+          }
+          const chibis = [{
+            n: "Mochi Kucing",
+            c: "#FFB800",
+            s: c => `<svg viewBox="0 0 100 100" width="100" height="100"><path d="M25 35 L18 8 L42 22 Z" fill="${c}"/><path d="M75 35 L82 8 L58 22 Z" fill="${c}"/><circle cx="50" cy="55" r="32" fill="${c}"/><circle cx="38" cy="50" r="5" fill="#1e293b"/><circle cx="62" cy="50" r="5" fill="#1e293b"/><circle cx="38" cy="50" r="2" fill="#fff"/><circle cx="62" cy="50" r="2" fill="#fff"/><ellipse cx="50" cy="62" rx="4" ry="3" fill="#ef4444"/><path d="M44 68 Q50 74 56 68" stroke="#1e293b" stroke-width="2" fill="none"/></svg>`
+          }, {
+            n: "Bubu Kelinci",
+            c: "#FFC0CB",
+            s: c => `<svg viewBox="0 0 100 100" width="100" height="100"><ellipse cx="35" cy="18" rx="10" ry="20" fill="${c}"/><ellipse cx="65" cy="18" rx="10" ry="20" fill="${c}"/><circle cx="50" cy="58" r="32" fill="${c}"/><circle cx="38" cy="53" r="5" fill="#1e293b"/><circle cx="62" cy="53" r="5" fill="#1e293b"/><circle cx="38" cy="53" r="2" fill="#fff"/><circle cx="62" cy="53" r="2" fill="#fff"/><ellipse cx="50" cy="65" rx="4" ry="3" fill="#ef4444"/></svg>`
+          }, {
+            n: "Kuma Beruang",
+            c: "#8B5A2B",
+            s: c => `<svg viewBox="0 0 100 100" width="100" height="100"><circle cx="24" cy="30" r="13" fill="${c}"/><circle cx="76" cy="30" r="13" fill="${c}"/><circle cx="50" cy="55" r="33" fill="${c}"/><ellipse cx="50" cy="64" rx="16" ry="11" fill="#FFD9A0"/><circle cx="38" cy="48" r="5" fill="#1e293b"/><circle cx="62" cy="48" r="5" fill="#1e293b"/><ellipse cx="50" cy="60" rx="5" ry="4" fill="#1e293b"/></svg>`
+          }, {
+            n: "Pao Panda",
+            c: "#fff",
+            s: c => `<svg viewBox="0 0 100 100" width="100" height="100"><circle cx="24" cy="30" r="13" fill="#1e293b"/><circle cx="76" cy="30" r="13" fill="#1e293b"/><circle cx="50" cy="55" r="33" fill="#fff"/><ellipse cx="38" cy="50" rx="9" ry="11" fill="#1e293b"/><ellipse cx="62" cy="50" rx="9" ry="11" fill="#1e293b"/><circle cx="38" cy="50" r="4" fill="#fff"/><circle cx="62" cy="50" r="4" fill="#fff"/></svg>`
+          }, {
+            n: "Chiki Ayam",
+            c: "#FFDE59",
+            s: c => `<svg viewBox="0 0 100 100" width="100" height="100"><path d="M44 18 Q50 4 56 18" fill="#ef4444"/><circle cx="50" cy="55" r="32" fill="${c}"/><circle cx="38" cy="50" r="5" fill="#1e293b"/><circle cx="62" cy="50" r="5" fill="#1e293b"/><ellipse cx="50" cy="60" rx="7" ry="5" fill="#f97316"/></svg>`
+          }];
+
+          function setC(id, lab, anim) {
+            let p = chibis[Math.floor(Math.random() * chibis.length)];
+            let e = $(id);
+            e.innerHTML = p.s(p.c);
+            e.className = "chibi " + anim;
+            if (lab) $(lab).textContent = p.n + " siap!";
+            return p
+          }
+
+          function setCS(id, lab, txt, anim) {
+            let e = $(id);
+            e.className = "chibi " + anim;
+            if (lab) $(lab).textContent = txt
+          }
+
+          function renderBtns(id, selId) {
+            let c = $(id);
+            c.innerHTML = "";
+            for (let i = 1; i <= 8; i++) {
+              let b = document.createElement("button");
+              b.textContent = i;
+              b.className = "group-num-btn" + (Number($(selId).value) === i ? " active" : "");
+              b.onclick = () => {
+                $(selId).value = i;
+                renderBtns(id, selId)
+              };
+              c.appendChild(b)
+            }
+          }
+          async function animDraw(fin) {
+            let el = $("resultName"),
+              st = $("shuffleStatus"),
+              cd = $("countdown");
+            isRolling = true;
+            $("drawBtn").disabled = true;
+            cd.classList.remove("show");
+            el.className = "result-name superfast";
+            setC("chibiName", "chibiNameLabel", "jumping");
+            let pool = sh(act());
+            return new Promise(res => {
+              let step = 0;
+              let slow = sh(pool.filter(n => n !== fin)).slice(0, 3);
+
+              function nx() {
+                if (step < 30) {
+                  el.textContent = pool[Math.floor(Math.random() * pool.length)];
+                  st.textContent = "SUPER CEPAT... " + (step + 1);
+                  if (step % 6 === 0) setC("chibiName", "chibiNameLabel", "jumping");
+                  setTimeout(() => {
+                    step++;
+                    nx()
+                  }, 28)
+                } else if (step < 33) {
+                  let si = step - 30;
+                  let d = [350, 600, 900];
+                  let ct = ["1...", "2...", "3..."];
+                  el.className = "result-name slow";
+                  el.textContent = slow[si];
+                  cd.textContent = ct[si];
+                  cd.classList.add("show");
+                  st.textContent = "Melambat... " + ct[si];
+                  setCS("chibiName", "chibiNameLabel", "Hampir dapat...", "dizzy");
+                  setTimeout(() => {
+                    step++;
+                    nx()
+                  }, d[si])
+                } else {
+                  el.className = "result-name final";
+                  el.textContent = fin;
+                  cd.textContent = "DAPAT!";
+                  st.textContent = "Berhasil!";
+                  setCS("chibiName", "chibiNameLabel", "Yeay, dapat " + fin + "!", "happy");
+                  isRolling = false;
+                  $("drawBtn").disabled = false;
+                  conf();
+                  setTimeout(() => cd.classList.remove("show"), 1500);
+                  res()
+                }
+              }
+              nx()
+            })
+          }
+
+          function renderG(gr) {
+            let o = $("groupsResult");
+            o.innerHTML = "";
+            gr.forEach((m, i) => {
+              let b = document.createElement("div");
+              b.className = "group";
+              b.style.animationDelay = (i * .12) + "s";
+              b.innerHTML = `<div class="group-header"><h3 style="margin:0;color:#91b5ff;font-size:14px">Kelompok ${i+1} - ${m.length} siswa</h3><button class="group-acak-btn" onclick="shuffleOne(${i})">Acak Grup ${i+1}</button></div><p style="margin:0;line-height:1.8;font-size:14px">${m.join(", ")}</p>`;
+              o.appendChild(b)
+            })
+          }
+
+          function pushH(gr) {
+            let e = {
+              id: Date.now(),
+              time: new Date().toLocaleString('id-ID'),
+              count: gr.length,
+              groups: gr,
+              totalSiswa: gr.flat().length,
+              type: "buat"
+            };
+            hist.unshift(e);
+            if (hist.length > 30) hist.pop();
+            saveH();
+            renderH()
+          }
+
+          function pushGH(o) {
+            let e = {
+              id: Date.now(),
+              time: new Date().toLocaleString('id-ID'),
+              count: o.length,
+              groups: [],
+              totalSiswa: o.length,
+              type: "gacha",
+              order: [...o]
+            };
+            hist.unshift(e);
+            if (hist.length > 30) hist.pop();
+            saveH();
+            renderH()
+          }
+
+          function renderH() {
+            let l = $("historyList");
+            if (!hist.length) {
+              l.innerHTML = `<p style="color:#94a3b8;font-size:12px">Belum ada riwayat</p>`;
+              return
+            }
+            l.innerHTML = "";
+            hist.forEach(h => {
+              let d = document.createElement("div");
+              d.className = "history-item";
+              if (h.type === "gacha") {
+                d.innerHTML = `<div style="display:flex;justify-content:space-between"><strong style="font-size:13px">GACHA URUTAN - ${h.time}</strong><span style="font-size:11px;background:#f59e0b;color:#000;padding:2px 8px;border-radius:10px;font-weight:bold">GACHA</span></div><div class="history-groups"><b>Urutan:</b> ${h.order.map((n,i)=>(i+1)+". Kelompok "+n).join(" - ")}</div><div style="display:flex;gap:6px;margin-top:8px"><button class="small-btn primary" onclick="loadG(${h.id})">Load Urutan</button><button class="small-btn" onclick="delH(${h.id})">Hapus</button></div>`
+              } else {
+                d.innerHTML = `<div style="display:flex;justify-content:space-between"><strong style="font-size:13px">${h.time} - ${h.count} Kelompok</strong><span style="font-size:11px;background:#17346b;padding:2px 6px;border-radius:10px">${h.count} grup</span></div><div class="history-groups">${h.groups.map((g,i)=>`<b>G${i+1}:</b> ${g.join(", ")}`).join(" | ")}</div><div style="display:flex;gap:6px;margin-top:8px"><button class="small-btn primary" onclick="loadH(${h.id})">Load</button><button class="small-btn" onclick="delH(${h.id})">Hapus</button></div>`
+              }
+              l.appendChild(d)
+            })
+          }
+          window.loadH = id => {
+            let f = hist.find(h => h.id === id);
+            if (!f) return;
+            $("tabBuat").click();
+            cur = f.groups.map(g => [...g]);
+            $("groupCount").value = f.count;
+            renderBtns("groupButtons", "groupCount");
+            renderG(cur)
+          };
+          window.loadG = id => {
+            let f = hist.find(h => h.id === id);
+            if (!f || !f.order) return;
+            $("tabGacha").click();
+            gachaDrawn = [...f.order];
+            showGachaOne(gachaDrawn[gachaDrawn.length - 1], true)
+          };
+          window.delH = id => {
+            hist = hist.filter(h => h.id !== id);
+            saveH();
+            renderH()
+          };
+          async function animGroups(finG) {
+            let pv = $("groupsPreview"),
+              nm = $("groupPreviewName"),
+              st = $("groupStatus"),
+              cd = $("groupCountdown"),
+              pcd = $("groupPreviewCd"),
+              out = $("groupsResult");
+            isGrouping = true;
+            $("makeGroups").disabled = true;
+            out.innerHTML = "";
+            pv.style.display = "block";
+            pcd.classList.remove("show");
+            nm.className = "result-name superfast";
+            setC("chibiGroup", "chibiGroupLabel", "jumping");
+            let all = act();
+            return new Promise(res => {
+              let step = 0;
+
+              function nx() {
+                if (step < 30) {
+                  let pick = sh(all).slice(0, Math.min(3, all.length));
+                  nm.textContent = pick.join(" • ");
+                  st.textContent = "MENGACAK SUPER CEPAT... " + (step + 1);
+                  if (step % 6 === 0) setC("chibiGroup", "chibiGroupLabel", "jumping");
+                  setTimeout(() => {
+                    step++;
+                    nx()
+                  }, 28)
+                } else if (step < 33) {
+                  let si = step - 30;
+                  let d = [350, 600, 900];
+                  let ct = ["1...", "2...", "3..."];
+                  nm.className = "result-name slow";
+                  nm.textContent = "SIAPKAN " + finG.length + " KELOMPOK...";
+                  st.textContent = "Melambat... " + ct[si];
+                  cd.textContent = ct[si];
+                  pcd.textContent = ct[si];
+                  pcd.classList.add("show");
+                  setCS("chibiGroup", "chibiGroupLabel", "Hampir jadi...", "dizzy");
+                  setTimeout(() => {
+                    step++;
+                    nx()
+                  }, d[si])
+                } else {
+                  nm.className = "result-name final";
+                  nm.textContent = "KELOMPOK JADI!";
+                  st.textContent = "Berhasil!";
+                  cd.textContent = "SELESAI!";
+                  pcd.textContent = "DAPAT!";
+                  setCS("chibiGroup", "chibiGroupLabel", "Kelompok jadi!", "happy");
+                  cur = finG.map(g => [...g]);
+                  pushH(cur);
+                  conf("groupConfetti");
+                  conf();
+                  setTimeout(() => {
+                    pv.style.display = "none";
+                    pcd.classList.remove("show");
+                    renderG(cur);
+                    isGrouping = false;
+                    $("makeGroups").disabled = false;
+                    setTimeout(() => {
+                      cd.textContent = "";
+                      st.textContent = "Siap acak"
+                    }, 1500);
+                    res()
+                  }, 950)
+                }
+              }
+              nx()
+            })
+          }
+          window.shuffleOne = async idx => {
+            if (isGrouping || isRolling || !cur[idx]) return;
+            let all = cur.flat();
+            let ng = createGroups(all, cur.length);
+            await animGroups(ng)
+          };
+
+          function showGachaOne(curG, isLoad) {
+            let r = $("gachaResult");
+            r.style.display = "block";
+            let cnt = Number($("gachaCount").value);
+            $("gachaBig").textContent = "Kelompok " + curG;
+            $("gachaBig").className = "gacha-big final";
+            $("gachaStep").textContent = "Urutan ke-" + gachaDrawn.length + " dari " + cnt + " - Sekarang: Kelompok " + curG;
+            $("gachaOrder").innerHTML = gachaDrawn.map((n, i) => `<div class="gacha-ball">${n}</div>`).join("");
+            $("gachaText").innerHTML = "Urutan sejauh ini: <b>" + gachaDrawn.map(n => "Kelompok " + n).join(" - ") + "</b><br>" +
+              (gachaDrawn.length >= cnt ? "Selesai! Semua kelompok sudah dapat giliran 🎉" : "Sisa " + (cnt - gachaDrawn.length) + " kelompok lagi. Pencet GACHA lagi!");
+            setCS("chibiGacha", "chibiGachaLabel", "Giliran Kelompok " + curG + "!", "happy");
+            if (gachaDrawn.length >= cnt && !isLoad) {
+              pushGH(gachaDrawn);
+            }
+          }
+          async function runG() {
+            if (isGacha) return;
+            let cnt = Number($("gachaCount").value);
+            if (gachaDrawn.length > 0 && gachaDrawn.length >= cnt && gachaDrawn.some(n => n > cnt)) {
+              gachaDrawn = [];
+            }
+            let avail = Array.from({
+              length: cnt
+            }, (_, i) => i + 1).filter(n => !gachaDrawn.includes(n));
+            if (!avail.length) {
+              $("gachaStep").textContent = "Selesai! Pencet Reset Gacha untuk mulai lagi.";
+              $("gachaStatus").textContent = "Selesai!";
+              return;
+            }
+            let fin = avail[Math.floor(Math.random() * avail.length)];
+            isGacha = true;
+            $("gachaBtn").disabled = true;
+            let r = $("gachaResult"),
+              big = $("gachaBig"),
+              st = $("gachaStatus"),
+              cd = $("gachaCountdown"),
+              stepEl = $("gachaStep");
+            r.style.display = "block";
+            big.className = "gacha-big superfast";
+            cd.classList.remove("show");
+            setC("chibiGacha", "chibiGachaLabel", "jumping");
+            $("gachaText").textContent = "";
+            $("gachaNext")?.remove();
+            let slowPool = sh(avail.filter(n => n !== fin)).slice(0, 3);
+            if (slowPool.length < 3) {
+              while (slowPool.length < 3) slowPool.push(fin);
+            }
+            await new Promise(res => {
+              let step = 0;
+
+              function tick() {
+                if (step < 30) {
+                  big.textContent = "Kelompok " + (Math.floor(Math.random() * cnt) + 1);
+                  st.textContent = "SUPER CEPAT... " + (step + 1);
+                  stepEl.textContent = "Mengocok... " + (step + 1) + " - Giliran ke-" + (gachaDrawn.length + 1);
+                  if (step % 6 === 0) setC("chibiGacha", "chibiGachaLabel", "jumping");
+                  step++;
+                  setTimeout(tick, 28);
+                } else if (step < 33) {
+                  let si = step - 30;
+                  let d = [350, 600, 900];
+                  let ct = ["1...", "2...", "3..."];
+                  big.className = "gacha-big slow";
+                  big.textContent = "Kelompok " + slowPool[si];
+                  cd.textContent = ct[si];
+                  cd.classList.add("show");
+                  st.textContent = "Melambat... " + ct[si];
+                  stepEl.textContent = "Melambat... " + ct[si];
+                  setCS("chibiGacha", "chibiGachaLabel", "Hampir keluar...", "dizzy");
+                  step++;
+                  setTimeout(tick, d[si]);
+                } else {
+                  big.className = "gacha-big final";
+                  big.textContent = "Kelompok " + fin;
+                  cd.textContent = "DAPAT!";
+                  st.textContent = "Berhasil!";
+                  stepEl.textContent = "DAPAT! Urutan ke-" + (gachaDrawn.length + 1) + ": Kelompok " + fin;
+                  gachaDrawn.push(fin);
+                  showGachaOne(fin, false);
+                  conf();
+                  setTimeout(() => {
+                    cd.classList.remove("show");
+                    st.textContent = "Siap gacha";
+                  }, 1500);
+                  $("gachaBtn").textContent = gachaDrawn.length >= cnt ? "SELESAI - RESET DULU" : "GACHA LAGI - KE-" + (gachaDrawn.length + 1);
+                  res();
+                }
+              }
+              tick();
+            });
+            isGacha = false;
+            $("gachaBtn").disabled = false;
+          }
+
+          function conf(cid = "confetti") {
+            let c = $(cid);
+            if (!c) return;
+            let x = c.getContext("2d");
+            c.width = c.offsetWidth;
+            c.height = c.offsetHeight;
+            let p = [];
+            for (let i = 0; i < 100; i++) p.push({
+              x: c.width / 2,
+              y: c.height / 2,
+              vx: (Math.random() - .5) * 10,
+              vy: -Math.random() * 10 - 2,
+              r: Math.random() * 6 + 2,
+              col: `hsl(${200+Math.random()*60},100%,60%)`,
+              life: 1
+            });
+            (function lp() {
+              x.clearRect(0, 0, c.width, c.height);
+              p.forEach(q => {
+                q.x += q.vx;
+                q.y += q.vy;
+                q.vy += .2;
+                q.life -= .012;
+                x.globalAlpha = q.life;
+                x.fillStyle = q.col;
+                x.beginPath();
+                x.arc(q.x, q.y, q.r, 0, Math.PI * 2);
+                x.fill()
+              });
+              p = p.filter(q => q.life > 0);
+              if (p.length > 0) requestAnimationFrame(lp);
+              else x.clearRect(0, 0, c.width, c.height)
+            })()
+          }
+          $("drawBtn").onclick = async () => {
+            if (isRolling || isGrouping) return;
+            let av = act().filter(n => !drawn.includes(n));
+            if (!av.length) {
+              $("resultName").textContent = act().length ? "Selesai!" : "Aktifkan dulu";
+              return
+            }
+            let f = av[Math.floor(Math.random() * av.length)];
+            drawn.push(f);
+            $("resultInfo").textContent = "Mengundi...";
+            await animDraw(f);
+            $("resultInfo").textContent = `Pilihan ke-${drawn.length} dari ${act().length}`
+          };
+          $("resetDraw").onclick = () => {
+            drawn = [];
+            $("resultName").textContent = "Siap mengundi!";
+            $("resultName").className = "result-name";
+            $("resultInfo").textContent = "Tekan tombol";
+            $("shuffleStatus").textContent = "Siap";
+            $("countdown").classList.remove("show");
+            setC("chibiName", "chibiNameLabel", "happy")
+          };
+          $("makeGroups").onclick = async () => {
+            if (isRolling || isGrouping) return;
+            let activeList = act(),
+              cnt = Number($("groupCount").value);
+            if (!activeList.length) return;
+            let gr = createGroups(activeList, cnt);
+            await animGroups(gr)
+          };
+          $("groupCount").onchange = () => renderBtns("groupButtons", "groupCount");
+          $("gachaCount").onchange = () => {
+            renderBtns("gachaButtons", "gachaCount");
+            gachaDrawn = [];
+            $("gachaBtn").textContent = "GACHA 1 KELOMPOK";
+            $("gachaResult").style.display = "none";
+            $("gachaStatus").textContent = "Siap gacha"
+          };
+          $("gachaBtn").onclick = runG;
+          $("gachaReset").onclick = () => {
+            gachaDrawn = [];
+            $("gachaBtn").textContent = "GACHA 1 KELOMPOK";
+            $("gachaResult").style.display = "none";
+            $("gachaStatus").textContent = "Siap gacha";
+            $("gachaStep").textContent = "Tekan tombol untuk gacha";
+            setC("chibiGacha", "chibiGachaLabel", "happy")
+          };
+          $("tabBuat").onclick = () => {
+            $("tabBuat").classList.add("active");
+            $("tabGacha").classList.remove("active");
+            $("panelBuat").style.display = "block";
+            $("panelGacha").style.display = "none"
+          };
+          $("tabGacha").onclick = () => {
+            $("tabGacha").classList.add("active");
+            $("tabBuat").classList.remove("active");
+            $("panelGacha").style.display = "block";
+            $("panelBuat").style.display = "none"
+          };
+          $("allOn").onclick = () => {
+            students.forEach(n => enabled[n] = true);
+            save();
+            upd();
+            renderS()
+          };
+          $("allOff").onclick = () => {
+            students.forEach(n => enabled[n] = false);
+            drawn = [];
+            save();
+            upd();
+            renderS()
+          };
+          $("sortAZ").onclick = renderS;
+          $("search").oninput = renderS;
+          $("clearHistory").onclick = () => {
+            if (confirm("Hapus semua riwayat?")) {
+              hist = [];
+              saveH();
+              renderH()
+            }
+          };
+          $("exportHistory").onclick = () => {
+            let t = hist.map(h => {
+              if (h.type === "gacha") return `${h.time} - GACHA URUTAN\nUrutan: ${h.order.map(n=>"Kelompok "+n).join(" - ")}\n`;
+              return `${h.time} - ${h.count} Kelompok\n${h.groups.map((g,i)=>`Kelompok ${i+1}: ${g.join(", ")}`).join("\n")}\n`
+            }).join("\n---\n\n");
+            let b = new Blob([t], {
+              type: "text/plain"
+            });
+            let u = URL.createObjectURL(b);
+            let a = document.createElement("a");
+            a.href = u;
+            a.download = "riwayat-kelompok.txt";
+            a.click()
+          };
+          upd();
+          renderS();
+          renderBtns("groupButtons", "groupCount");
+          renderBtns("gachaButtons", "gachaCount");
+          renderH();
+          setC("chibiName", "chibiNameLabel", "happy");
+
+        </script>
+      </body>
+    </html>
+
+  </body>
+</html>
